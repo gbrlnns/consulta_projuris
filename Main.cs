@@ -80,8 +80,8 @@ namespace API_Tarefas
                     return lista.Count switch
                     {
                         0 => "Não há tarefas pendentes.",
-                        1 => string.Join("", lista.ToArray()),
-                        _ => string.Join(", ", lista.ToArray(), 0, lista.Count - 1) + " e " + lista.LastOrDefault()
+                        1 => "Temos no Projuris: " + string.Join("", lista.ToArray()) + ".",
+                        _ => "Temos no Projuris: " + string.Join(", ", lista.ToArray(), 0, lista.Count - 1) + " e " + lista.LastOrDefault() + "."
                     };
                 }
             }

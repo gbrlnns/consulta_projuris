@@ -1,4 +1,5 @@
-﻿using System.Net.Http.Headers;
+﻿using System.Net;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -28,6 +29,11 @@ public static class ApiListas
         };
         var response = await client.SendAsync(request);
         response.EnsureSuccessStatusCode();
+
+        if (response.StatusCode == (HttpStatusCode)204)
+        {
+            return new List<Dictionary<string, object?>>();
+        }
         var body = await response.Content.ReadAsStringAsync();
         
         /*
