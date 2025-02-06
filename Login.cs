@@ -134,7 +134,7 @@ namespace API_Tarefas
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Post,
-                RequestUri = new Uri("https://login.projurisadv.com.br/adv-bouncer-authorization-server/oauth/token"),
+                RequestUri = new Uri("https://apigw.projurisadv.com.br/auth/token"),
                 Headers =
                 {
                     { "Authorization", $"Basic {base64EncodedAuthenticationString}"},
